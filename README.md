@@ -247,7 +247,7 @@ if( x && y ){
 }   
         
 if( x || z ){
-  console.log("Code runs");  // This block runs because x || y returns 220(Truthy)
+  console.log("Code runs");  // This block runs because x || y returns 220 (Truthy)
 }
 ```
 

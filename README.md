@@ -236,7 +236,7 @@ var z = undefined;
         
 x | | y    // Returns 220 since the first value is truthy
         
-x | | z   // Returns 220 since the first value is truthy
+x | | z e  // Returns 220 since the first value is truthy
         
 x && y    // Returns "Hello" since both the values are truthy
         
@@ -261,7 +261,7 @@ The reality is that while using the ‘==’ operator, coercion takes place.
 
 The ‘==’ operator, converts both the operands to the same type and then compares them.
 
-##### Example:
+##### Example 1:
 ```JavaScript
 var a = 12;
 var b = "12";
@@ -269,10 +269,10 @@ a == b // Returns true because both 'a' and 'b' are converted to the same type a
 ```
 Coercion does not take place when using the ‘===’ operator. Both operands are not converted to the same type in the case of ‘===’ operator.
 
-##### Example:
+##### Example 2:
 ```JavaScript
 var a = 226;
 var b = "226";
 
 a === b // Returns false because coercion does not take place and the  operands are of different types. Hence they are not equal. 
-``` 
+```

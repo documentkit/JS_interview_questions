@@ -9,8 +9,8 @@ To know the type of a JavaScript variable, we can use the typeof operator.
 ##### Example:
 
 ```JavaScript
-var str = "Vivek Singh Bisht"; //using double quotes
-var str2 = 'John Doe'; //using single quotes
+var str = "Abraham Lincoln"; //using double quotes
+var str2 = 'Hideo Kojima'; //using single quotes
 ```
 
 * Number - It represents a number and can be written with or without decimals.

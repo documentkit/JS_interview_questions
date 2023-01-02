@@ -523,7 +523,7 @@ Although in the code above, this keyword refers to the object obj2, obj2 does no
 #### Without being requested, a self-invoking expression is automatically invoked (initiated). If a function expression is followed by (), it will execute automatically. A function declaration cannot be invoked by itself. Normally, we declare a function and call it, however, anonymous functions may be used to run a function automatically when it is described and will not be called again. And there is no name for these kinds of functions.
 
 ### ```15. Explain call(), apply() and, bind() methods.```
-### 1. call():
+#### 1. call():
 * It’s a predefined method in javascript.
 * This method invokes a method (function) by specifying the owner object.
 
@@ -566,7 +566,7 @@ saySomething.call(person4, "awesome");
 // Returns "Batman is awesome"
 ```
 
-### 2.apply():
+#### 2. apply():
 
 * The apply method is similar to the call() method. The only difference is that,
 
@@ -580,7 +580,7 @@ var person4 = {name:  "Aquaman"};
 saySomething.apply(person4, ["strong"]);
 ```
 
-### 3. bind():
+#### 3. bind():
 
 * This method returns a new function, where the value of “this” keyword will be bound to the owner object, which is provided as a parameter.
 ##### Example :

@@ -555,7 +555,8 @@ person.getAge.call(person2);
 // Returns 54 
 ```
 
-* call() accepts arguments:
+* call() accepts arguments.
+##### Example 3:
 ```JavaScipt
 function saySomething(message){
   return this.name + " is " + message;
@@ -570,7 +571,7 @@ saySomething.call(person4, "awesome");
 * The apply method is similar to the call() method. The only difference is that,
 
 * call() method takes arguments separately whereas, apply() method takes arguments as an array.
-
+##### Example:
 ```JavaScript
 function saySomething(message){
   return this.name + " is " + message;
@@ -582,7 +583,7 @@ saySomething.apply(person4, ["strong"]);
 ### 3. bind():
 
 * This method returns a new function, where the value of “this” keyword will be bound to the owner object, which is provided as a parameter.
-Example with arguments:
+##### Example :
 ```JavaScript
 var bikeDetails = {
     displayDetails: function(registrationNumber,brandName){

@@ -557,7 +557,7 @@ person.getAge.call(person2);
 
 * call() accepts arguments.
 ##### Example 3:
-```JavaScipt
+```JavaScript
 function saySomething(message){
   return this.name + " is " + message;
 }     

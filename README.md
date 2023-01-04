@@ -606,3 +606,51 @@ detailsOfPerson1();
 * test () and exec () are RegExp expression methods used in javascript. 
 * We'll use exec () to search a string for a specific pattern, and if it finds it, it'll return the pattern directly; else, it'll return an 'empty' result.
 * We will use a test () to find a string for a specific pattern. It will return the Boolean value 'true' on finding the given text otherwise, it will return 'false'.
+
+### ```17. What is currying in JavaScript?```
+#### Currying is an advanced technique to transform a function of arguments n, to n functions of one or fewer arguments.
+
+##### Example 1:
+```JavaScript
+function add (a) {
+  return function(b){
+    return a + b;
+  }
+}
+
+add(3)(4) 
+```
+For Example, if we have a function f(a,b), then the function after currying, will be transformed to f(a)(b).
+
+By using the currying technique, we do not change the functionality of a function, we just change the way it is invoked.
+
+##### Example 2:
+```JavaScript
+function multiply(a,b){
+  return a*b;
+}
+
+function currying(fn){
+  return function(a){
+    return function(b){
+      return fn(a,b);
+    }
+  }
+}
+
+var curriedMultiply = currying(multiply);
+
+multiply(4, 3); // Returns 12
+
+curriedMultiply(4)(3); // Also returns 12
+```
+
+As one can see in the code above, we have transformed the function multiply(a,b) to a function curriedMultiply , which takes in one parameter at a time.
+
+### ```18. What are some advantages of using External JavaScript?```
+#### External JavaScript is the JavaScript Code (script) written in a separate file with the extension.js, and then we link that file inside the <head> or <body> element of the HTML file where the code is to be placed. 
+
+Some advantages of external javascript are:
+* It allows web designers and developers to collaborate on HTML and javascript files.
+* We can reuse the code.
+* Code readability is simple in external javascript.

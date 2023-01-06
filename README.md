@@ -199,8 +199,8 @@ When JavaScript sees that the operands of the expression x + y are of different 
 ```Note - Type coercion also takes place when using the ‘ - ‘ operator, but the difference while using ‘ - ‘ operator is that, a string is converted to a number and then subtraction takes place.```
 ```JavaScript
 var x = 3;
-Var y = "3";
-x - y    //Returns 0 since the variable y (string type) is converted to a number type
+var y = "3";
+console.log(x - y);    //Returns 0 since the variable y (string type) is converted to a number type
 ```
 
 * Boolean Coercion - Boolean coercion takes place when using logical operators, ternary operators, if statements, and loop checks. To understand boolean coercion in if statements and operators, we need to understand truthy and falsy values.

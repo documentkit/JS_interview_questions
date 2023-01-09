@@ -9,16 +9,20 @@ To know the type of a JavaScript variable, we can use the typeof operator.
 ##### Example:
 
 ```JavaScript
-var str = "Abraham Lincoln"; //using double quotes
-var str2 = 'Hideo Kojima'; //using single quotes
+var str = "Abraham Lincoln"; // using double quotes
+var str2 = 'Hideo Kojima'; // using single quotes
+console.log(str);
+console.log(str2);
 ```
 
 * Number - It represents a number and can be written with or without decimals.
 ##### Example:
 
 ```JavaScript
-var x = 3; //without decimal
-var y = 3.6; //with decimal
+var x = 3; // without decimal
+var y = 3.6; // with decimal
+console.log(x);
+console.log(y);
 ```
 
 * BigInt - This data type is used to store numbers which are above the limitation of the Number data type. It can store large integers and is represented by adding “n” to an integer literal.
@@ -26,6 +30,7 @@ var y = 3.6; //with decimal
 
 ```JavaScript
 var bigInteger =  234567890123456789012345678901234567890;
+console.log(bigInteger);
 ```
 
 * Boolean - It represents a logical entity and can have only two values : true or false. Booleans are generally used for conditional testing.
@@ -35,8 +40,8 @@ var bigInteger =  234567890123456789012345678901234567890;
 var a = 2;
 var b =  3;
 var c =  2;
-(a == b) // returns false
-(a == c) //returns true
+console.log(a == b); // returns false
+console.log(a == c); // returns true
 ```
 
 * Undefined - When a variable is declared but not assigned, it has the value of undefined and it’s type is also undefined.
@@ -45,6 +50,8 @@ var c =  2;
 ```JavaScript
 var x; // value of x is undefined
 var y = undefined; // we can also set the value of a variable as undefined
+console.log(x);
+console.log(y);
 ```
 
 * Null - It represents a non-existent or a invalid value.
@@ -52,6 +59,7 @@ var y = undefined; // we can also set the value of a variable as undefined
 
 ```JavaScript
 var z = null;
+console.log(z);
 ```
 
 * Symbol - It is a new data type introduced in the ES6 version of javascript. It is used to store an anonymous and unique value.
@@ -59,14 +67,18 @@ var z = null;
 
 ```JavaScript
 var symbol1 = Symbol('symbol');
-typeof of primitive types :
-typeof "John Doe" // Returns "string"
-typeof 3.14 // Returns "number"
-typeof true // Returns "boolean"
-typeof 234567890123456789012345678901234567890n // Returns bigint
-typeof undefined // Returns "undefined"
-typeof null // Returns "object" (kind of a bug in JavaScript)
-typeof Symbol('symbol') // Returns Symbol
+console.log(symbol1);
+```
+
+* typeof of primitive types:
+```JavaScript
+console.log(typeof "John Doe"); // Returns "string"
+console.log(typeof 3.14); // Returns "number"
+console.log(typeof true); // Returns "boolean"
+console.log(typeof 234567890123456789012345678901234567890n); // Returns bigint
+console.log(typeof undefined); // Returns "undefined"
+console.log(typeof null); // Returns "object" (kind of a bug in JavaScript)
+console.log(typeof Symbol('symbol')); // Returns Symbol
 ```
 
 #### Non-primitive types:
@@ -85,10 +97,12 @@ var obj1 = {
       return this.x;
    }
 }
+console.log(obj1);
       
 // Collection of data as an ordered list
      
 var array1 = [5, "Hello", true, 4.1];
+console.log(array1);
 ```
 
 ``` Note- It is important to remember that any data type that is not a primitive data type, is of Object type in javascript.```

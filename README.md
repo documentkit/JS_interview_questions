@@ -724,7 +724,7 @@ console.log(i); // Gives reference error since i cannot be accessed outside of t
 
 #### 4. Scope Chain: JavaScript engine also uses Scope to find variables. Let’s understand that using an example:
 
-``JavaScript
+```JavaScript
 var y = 24;
 
 function favFunction(){
@@ -742,6 +742,7 @@ function favFunction(){
 }
 favFunction();
 ```
+
 #### As you can see in the code above, if the javascript engine does not find the variable in local scope, it tries to check for the variable in the outer scope. If the variable does not exist in the outer scope, it tries to find the variable in the global scope.
 
 If the variable is not found in the global space as well, a reference error is thrown.

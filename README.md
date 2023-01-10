@@ -862,8 +862,8 @@ operationOnSum(5, 5, multiplyBy2); // Outputs 20
 ### ```24. What are the types of errors in javascript?```
 #### There are two types of errors in javascript.
 
-#### 1. Syntax error: Syntax errors are mistakes or spelling problems in the code that cause the program to not execute at all or to stop running halfway through. Error messages are usually supplied as well.
-#### 2. Logical error: Reasoning mistakes occur when the syntax is proper but the logic or program is incorrect. The application executes without problems in this case. However, the output findings are inaccurate. These are sometimes more difficult to correct than syntax issues since these applications do not display error signals for logic faults.
+* Syntax error: Syntax errors are mistakes or spelling problems in the code that cause the program to not execute at all or to stop running halfway through. Error messages are usually supplied as well.
+* Logical error: Reasoning mistakes occur when the syntax is proper but the logic or program is incorrect. The application executes without problems in this case. However, the output findings are inaccurate. These are sometimes more difficult to correct than syntax issues since these applications do not display error signals for logic faults.
 
 ### ```25. What is memoization?```
 #### Memoization is a form of caching where the return value of a function is cached based on its parameters. If the parameter of that function is not changed, the cached version of the function is returned.
@@ -876,9 +876,9 @@ Consider the following function:
 function addTo256(num){
   return num + 256;
 }
-addTo256(20); // Returns 276
-addTo256(40); // Returns 296
-addTo256(20); // Returns 276
+console.log(addTo256(20)); // Returns 276
+console.log(addTo256(40)); // Returns 296
+console.log(addTo256(20)); // Returns 276
 ```
 
 In the code above, we have written a function that adds the parameter to 256 and returns it.
@@ -907,13 +907,13 @@ function memoizedAddTo256(){
 }
 var memoizedFunc = memoizedAddTo256();
 
-memoizedFunc(20); // Normal return
+console.log(memoizedFunc(20)); // Normal return i.e.; 276
 memoizedFunc(20); // Cached return
 ```
 
 In the code above, if we run the memoizedFunc function with the same parameter, instead of computing the result again, it returns the cached result.
 
-```Note- Although using memoization saves time, it results in larger consumption of memory since we are storing all the computed results.```
+```Note - Although using memoization saves time, it results in larger consumption of memory since we are storing all the computed results.```
 
 ### ```26. What is recursion in a programming language?```
 #### Recursion is a technique to iterate over an operation by having a function call itself repeatedly until it arrives at a result.
@@ -945,7 +945,8 @@ function computeSum(arr){
     return arr.pop() + computeSum(arr);
   }
 }
-computeSum([7, 8, 9, 99]); // Returns 123
+
+console.log(computeSum([7, 8, 9, 99])); // Returns 123
 ```
 
 ### ```27. What is the use of a constructor function in javascript?```
@@ -958,7 +959,7 @@ If we want to create multiple objects having similar properties and methods, con
 ```Note- The name of a constructor function should always be written in Pascal Notation: every word should start with a capital letter.```
 
 ##### Example:
-
+```JavaScript
 function Person(name,age,gender){
   this.name = name;
   this.age = age;
@@ -966,10 +967,10 @@ function Person(name,age,gender){
 }
 
 
-var person1 = new Person("Vivek", 76, "male");
+var person1 = new Person("Elton John", 76, "male");
 console.log(person1);
 
-var person2 = new Person("Courtney", 34, "female");
+var person2 = new Person("Natalie Portman", 34, "female");
 console.log(person2);
 ```
 

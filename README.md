@@ -790,7 +790,7 @@ initialiseClosure();
 ```
 The line of code above outputs "Richard Madden is awesome." and this is possible because of closure.
 ```JavaScript
-console.log(obj1.name + " is "+ "awesome");
+console.log(obj1.name + " is "+ "awesome.");
 ```
 When the function randomFunc() runs, it seems that the returning function is using the variable obj1 inside it:
 

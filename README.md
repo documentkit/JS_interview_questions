@@ -440,21 +440,21 @@ function higherOrder(fn) {
   fn();
 }
    
-higherOrder(function() { console.log("Hello world") });
+higherOrder(function() { console.log("Hello World!") });
 ```
 ##### Example 2:
 ```JavaScript
 function higherOrder2() {
   return function() {
-    return "Do something";
+    return "Do something...";
   }
 }      
 var x = higherOrder2();
-x()   // Returns "Do something"
+console.log(x());   // Returns "Do something..."
 ```
 
 ### ```13. Explain “this” keyword.```
-#### The “this” keyword refers to the object that the function is a property of. The value of the “this” keyword will always depend on the object that is invoking the function.
+#### The "this" keyword refers to the object that the function is a property of. The value of the "this" keyword will always depend on the object that is invoking the function.
 
 Confused? Let’s understand the above statements by examples:
 ##### Example 1:
@@ -471,7 +471,7 @@ What do you think the output of the above code will be?
 
 Check the definition again:
 
-``` The “this” keyword refers to the object that the function is a property of.```
+``` The "this" keyword refers to the object that the function is a property of.```
 
 In the above code, the function is a property of which object?
 
@@ -490,7 +490,7 @@ var obj = {
    
 obj.getName();
 ```
-In the above code, at the time of invocation, the getName function is a property of the object obj , therefore, this keyword will refer to the object obj, and hence the output will be “abhinav”.
+In the above code, at the time of invocation, the getName function is a property of the object obj , therefore, this keyword will refer to the object obj, and hence the output will be "abhinav".
 
 ##### Example 3:
 ```JavaScript
@@ -509,11 +509,11 @@ obj2.getName();
 ```
 Can you guess the output here?
 
-The output will be “tushar”.
+The output will be "tushar".
 
-Although the getName function is declared inside the object obj, at the time of invocation, getName() is a property of obj2, therefore the “this” keyword will refer to obj2.
+Although the getName function is declared inside the object obj, at the time of invocation, getName() is a property of obj2, therefore the "this" keyword will refer to obj2.
 
-The silly way to understand the “this” keyword is, whenever the function is invoked, check the object before the dot. The value of this . keyword will always be the object before the dot.
+The silly way to understand the "this" keyword is, whenever the function is invoked, check the object before the dot. The value of this . keyword will always be the object before the dot.
 
 If there is no object before the dot-like in example1, the value of this keyword will be the global object.
 
@@ -535,7 +535,7 @@ Can you guess the output?
 
 The output will be an error.
 
-Although in the code above, this keyword refers to the object obj2, obj2 does not have the property “address”‘, hence the getAddress function throws an error.
+Although in the code above, this keyword refers to the object obj2, obj2 does not have the property "address", hence the getAddress function throws an error.
 
 ### ```14. What do you mean by Self Invoking Functions?```
 #### Without being requested, a self-invoking expression is automatically invoked (initiated). If a function expression is followed by (), it will execute automatically. A function declaration cannot be invoked by itself. Normally, we declare a function and call it, however, anonymous functions may be used to run a function automatically when it is described and will not be called again. And there is no name for these kinds of functions.
@@ -553,9 +553,7 @@ function sayHello(){
         
 var obj = {name: "Superman"};
         
-sayHello.call(obj);
-        
-// Returns "Hello Superman"
+console.log(sayHello.call(obj)); // Returns "Hello Superman"
 ```
 
 * call() method allows an object to use the method (function) of another object.
@@ -569,8 +567,7 @@ var person = {
   }
 }        
 var person2 = {age:  54};
-person.getAge.call(person2);      
-// Returns 54 
+console.log(person.getAge.call(person2)); // Returns 54 
 ```
 
 * call() accepts arguments.
@@ -580,8 +577,7 @@ function saySomething(message){
   return this.name + " is " + message;
 }     
 var person4 = {name:  "Batman"};     
-saySomething.call(person4, "awesome");
-// Returns "Batman is awesome"
+console.log(saySomething.call(person4, "awesome")); // Returns "Batman is awesome"
 ```
 
 #### 2. apply():
@@ -595,12 +591,12 @@ function saySomething(message){
   return this.name + " is " + message;
 }        
 var person4 = {name:  "Aquaman"};
-saySomething.apply(person4, ["strong"]);
+console.log(saySomething.apply(person4, ["strong"])); // Returns "Aquaman is strong"
 ```
 
 #### 3. bind():
 
-* This method returns a new function, where the value of “this” keyword will be bound to the owner object, which is provided as a parameter.
+* This method returns a new function, where the value of "this" keyword will be bound to the owner object, which is provided as a parameter.
 ##### Example :
 ```JavaScript
 var bikeDetails = {
@@ -611,13 +607,11 @@ var bikeDetails = {
    
 var person1 = {name:  "Abhinav"};
      
-var detailsOfPerson1 = bikeDetails.displayDetails.bind(person1, "TS0122", "Bullet");
+var detailsOfPerson1 = bikeDetails.displayDetails.bind(person1, "HU0144", "Hunter 350");
       
-// Binds the displayDetails function to the person1 object
-        
+// Binds the displayDetails function to the person1 object   
       
-detailsOfPerson1();
-//Returns Abhinav, bike details: TS0122, Bullet
+console.log(detailsOfPerson1()); // Returns Abhinav, bike details: HU0144, Hunter 350
 ```
 
 ### ```16. What is the difference between exec () and test () methods in javascript?```
@@ -636,7 +630,7 @@ function add (a) {
   }
 }
 
-add(3)(4) 
+console.log(add(3)(4)); 
 ```
 For Example, if we have a function f(a,b), then the function after currying, will be transformed to f(a)(b).
 
@@ -658,9 +652,9 @@ function currying(fn){
 
 var curriedMultiply = currying(multiply);
 
-multiply(4, 3); // Returns 12
+console.log(multiply(4, 3)); // Returns 12
 
-curriedMultiply(4)(3); // Also returns 12
+console.log(curriedMultiply(4)(3)); // Also returns 12
 ```
 
 As one can see in the code above, we have transformed the function multiply(a,b) to a function curriedMultiply , which takes in one parameter at a time.

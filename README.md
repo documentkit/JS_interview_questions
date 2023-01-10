@@ -304,20 +304,20 @@ console.log(a);
 ```
 
 ### ```8. What is NaN property in JavaScript?```
-#### NaN property represents the “Not-a-Number” value. It indicates a value that is not a legal number.
+#### NaN property represents the "Not-a-Number" value. It indicates a value that is not a legal number.
 
 typeof of NaN will return a Number.
 
 To check if a value is NaN, we use the isNaN() function,
 
-```Note- isNaN() function converts the given value to a Number type, and then equates to NaN.```
+```Note - isNaN() function converts the given value to a Number type, and then equates to NaN.```
 ```JavaScript
-isNaN("Hello")  // Returns true
-isNaN(345)   // Returns false
-isNaN('1')  // Returns false, since '1' is converted to Number type which results in 0 ( a number) 
-isNaN(true) // Returns false, since true converted to Number type results in 1 ( a number)
-isNaN(false) // Returns false
-isNaN(undefined) // Returns true
+console.log(isNaN("Hello"));  // Returns true
+console.log(isNaN(345));   // Returns false
+console.log(isNaN('1'));  // Returns false, since '1' is converted to Number type which results in 0 ( a number) 
+console.log(isNaN(true)); // Returns false, since true converted to Number type results in 1 ( a number)
+console.log(isNaN(false)); // Returns false
+console.log(isNaN(undefined)); // Returns true
 ```
 
 ### ```9. Explain passed by value and passed by reference.```
@@ -325,8 +325,9 @@ isNaN(undefined) // Returns true
 #### In JavaScript, primitive data types are passed by value and non-primitive data types are passed by reference. For understanding passed by value and passed by reference, we need to understand what happens when we create a variable and assign a value to it,
 ```JavaScript
 var x = 2;
+console.log(x);
 ```
-In the above example, we created a variable x and assigned it a value of “2”. In the background, the “=” (assign operator) allocates some space in the memory, stores the value “2” and returns the location of the allocated memory space. Therefore, the variable x in the above code points to the location of the memory space instead of pointing to the value 2 directly.
+In the above example, we created a variable x and assigned it a value of "2". In the background, the "=" (assign operator) allocates some space in the memory, stores the value "2" and returns the location of the allocated memory space. Therefore, the variable x in the above code points to the location of the memory space instead of pointing to the value 2 directly.
 
 Assign operator behaves differently when dealing with primitive and non-primitive data types,
 
@@ -334,6 +335,7 @@ Assign operator dealing with primitive types:
 ```JavaScript
 var y = 234;
 var z = y;
+console.log(z);
 ```
 In the above example, the assign operator knows that the value assigned to y is a primitive type (number type in this case), so when the second line code executes, where the value of y is assigned to z, the assign operator takes the value of y (234) and allocates a new space in the memory and returns the address. Therefore, variable z is not pointing to the location of variable y, instead, it is pointing to a new location in the memory.
 
@@ -354,11 +356,12 @@ Assign operator dealing with non-primitive types:
 ```JavaScript
 var obj = { name: "Henry", surname: "Cavill" };
 var obj2 = obj;
+console.log(obj2);
 ```
 In the above example, the assign operator directly passes the location of the variable obj to the variable obj2. In other words, the reference of the variable obj is passed to the variable obj2.
 
 ```JavaScript
-var obj = #8711;  // obj pointing to address of { name: "Henry", surname: "Cavill" }
+var obj = #8711;  // obj pointing to address of { name: "Robert", surname: "Pattinson" }
 var obj2 = obj;
     
 var obj2 = #8711; // obj2 pointing to the same address 

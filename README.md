@@ -788,7 +788,7 @@ The returned function is then executed when we invoke initialiseClosure:
 ```JavaScript
 initialiseClosure();
 ```
-The line of code above outputs “Vivian is awesome” and this is possible because of closure.
+The line of code above outputs "Richard Madden is awesome." and this is possible because of closure.
 ```JavaScript
 console.log(obj1.name + " is "+ "awesome");
 ```

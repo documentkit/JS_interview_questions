@@ -666,3 +666,166 @@ Some advantages of external javascript are:
 * It allows web designers and developers to collaborate on HTML and javascript files.
 * We can reuse the code.
 * Code readability is simple in external javascript.
+
+### ```19. Explain Scope and Scope Chain in javascript.```
+#### Scope in JS determines the accessibility of variables and functions at various parts of one's code. In general terms, the scope will let us know at a given part of code, what are variables and functions we can or cannot access.
+
+#### There are three types of scopes in JS:
+
+* Global Scope
+* Local or Function Scope
+* Block Scope
+
+#### 1. Global Scope: Variables or functions declared in the global namespace have global scope, which means all the variables and functions having global scope can be accessed from anywhere inside the code.
+
+```JavaScript
+var globalVariable = "Hello world";
+
+function sendMessage(){
+  return globalVariable; // can access globalVariable since it's written in global space
+}
+function sendMessage2(){
+  return sendMessage(); // Can access sendMessage function since it's written in global space
+}
+console.log(sendMessage2());  // Returns "Hello World!"
+```
+
+#### 2. Function Scope: Any variables or functions declared inside a function have local/function scope, which means that all the variables and functions declared inside a function, can be accessed from within the function and not outside of it.
+
+```JavaScript
+function awesomeFunction(){
+  var a = 2;
+
+  var multiplyBy2 = function(){
+    console.log(a*2); // Can access variable "a" since a and multiplyBy2 both are written inside the same function
+  }
+}
+console.log(a); // Throws reference error since a is written in local scope and cannot be accessed outside
+
+console.log(multiplyBy2()); // Throws reference error since multiplyBy2 is written in local scope
+```
+
+#### 3. Block Scope: Block scope is related to the variables declared using let and const. Variables declared with var do not have block scope. Block scope tells us that any variable declared inside a block { }, can be accessed only inside that block and cannot be accessed outside of it.
+
+```JavaScript
+{
+  let x = 45;
+}
+
+console.log(x); // Gives reference error since x cannot be accessed outside of the block
+```
+```JavaScript
+for(let i=0; i<2; i++){
+  // do something
+}
+
+console.log(i); // Gives reference error since i cannot be accessed outside of the for loop block
+```
+
+#### 4. Scope Chain: JavaScript engine also uses Scope to find variables. Let’s understand that using an example:
+
+``JavaScript
+var y = 24;
+
+function favFunction(){
+  var x = 667;
+  var anotherFavFunction = function(){
+    console.log(x); // Does not find x inside anotherFavFunction, so looks for variable inside favFunction, outputs 667
+  }
+
+  var yetAnotherFavFunction = function(){
+    console.log(y); // Does not find y inside yetAnotherFavFunction, so looks for variable inside favFunction and does not find it, so looks for variable in global scope, finds it and outputs 24
+  }
+
+  anotherFavFunction();
+  yetAnotherFavFunction();
+}
+favFunction();
+```
+#### As you can see in the code above, if the javascript engine does not find the variable in local scope, it tries to check for the variable in the outer scope. If the variable does not exist in the outer scope, it tries to find the variable in the global scope.
+
+If the variable is not found in the global space as well, a reference error is thrown.
+
+### ```20. Explain Closures in JavaScript.```
+#### Closures are an ability of a function to remember the variables and functions that are declared in its outer scope.
+
+```JavaScript
+var Person = function(pName){
+  var name = pName;
+
+  this.getName = function(){
+    return name;
+  }
+}
+
+var person = new Person("Prem");
+console.log(person.getName());
+```
+Let’s understand closures by example:
+
+```JavaScript
+function randomFunc(){
+  var obj1 = {name:"Richard Madden", age:45};
+
+  return function(){
+    console.log(obj1.name + " is "+ "awesome."); // Has access to obj1 even when the randomFunc function is executed
+
+  }
+}
+
+var initialiseClosure = randomFunc(); // Returns a function
+
+initialiseClosure(); 
+```
+Let’s understand the code above,
+
+The function randomFunc() gets executed and returns a function when we assign it to a variable:
+```JavaScript
+var initialiseClosure = randomFunc();
+```
+The returned function is then executed when we invoke initialiseClosure:
+```JavaScript
+initialiseClosure();
+```
+The line of code above outputs “Vivian is awesome” and this is possible because of closure.
+```JavaScript
+console.log(obj1.name + " is "+ "awesome");
+```
+When the function randomFunc() runs, it seems that the returning function is using the variable obj1 inside it:
+
+Therefore randomFunc(), instead of destroying the value of obj1 after execution, ```saves the value in the memory for further reference```. This is the reason why the returning function is able to use the variable declared in the outer scope even after the function is already executed.
+
+```This ability of a function to store a variable for further reference even after it is executed is called Closure.```
+
+### ```21. Mention some advantages of javascript.```
+#### There are many advantages of javascript. Some of them are 
+
+* Javascript is executed on the client-side as well as server-side also. There are a variety of Frontend Frameworks that you may study and utilize. However, if you want to use JavaScript on the backend, you'll need to learn NodeJS. It is currently the only JavaScript framework that may be used on the backend.
+* Javascript is a simple language to learn.
+* Web pages now have more functionality because of Javascript.
+* To the end-user, Javascript is quite quick.
+
+### ```22. What are object prototypes?```
+#### All javascript objects inherit properties from a prototype. For example,
+
+* Date objects inherit properties from the Date prototype
+* Math objects inherit properties from the Math prototype
+* Array objects inherit properties from the Array prototype.
+* On top of the chain is Object.prototype. Every prototype inherits properties and methods from the Object.prototype.
+* A prototype is a blueprint of an object. The prototype allows us to use properties and methods on an object even if the properties and methods do not exist on the current object.
+
+Let’s see prototypes help us use methods and properties:
+```JavaScript
+var arr = [];
+arr.push(2);
+
+console.log(arr); // Outputs [2]
+```
+
+In the code above, as one can see, we have not defined any property or method called push on the array “arr” but the javascript engine does not throw an error.
+
+The reason is the use of prototypes. As we discussed before, Array objects inherit properties from the Array prototype.
+
+The javascript engine sees that the method push does not exist on the current array object and therefore, looks for the method push inside the Array prototype and it finds the method.
+
+Whenever the property or method is not found on the current object, the javascript engine will always try to look in its prototype and if it still does not exist, it looks inside the prototype's prototype and so on.

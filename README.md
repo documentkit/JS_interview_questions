@@ -38,8 +38,8 @@ console.log(bigInteger);
 
 ```JavaScript
 var a = 2;
-var b =  3;
-var c =  2;
+var b = 3;
+var c = 2;
 console.log(a == b); // returns false
 console.log(a == c); // returns true
 ```

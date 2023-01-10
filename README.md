@@ -679,7 +679,7 @@ Some advantages of external javascript are:
 #### 1. Global Scope: Variables or functions declared in the global namespace have global scope, which means all the variables and functions having global scope can be accessed from anywhere inside the code.
 
 ```JavaScript
-var globalVariable = "Hello world";
+var globalVariable = "Hello World!";
 
 function sendMessage(){
   return globalVariable; // can access globalVariable since it's written in global space

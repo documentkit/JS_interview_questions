@@ -830,3 +830,172 @@ The reason is the use of prototypes. As we discussed before, Array objects inher
 The javascript engine sees that the method push does not exist on the current array object and therefore, looks for the method push inside the Array prototype and it finds the method.
 
 Whenever the property or method is not found on the current object, the javascript engine will always try to look in its prototype and if it still does not exist, it looks inside the prototype's prototype and so on.
+
+### ```23. What are callbacks?```
+#### A callback is a function that will be executed after another function gets executed. In javascript, functions are treated as first-class citizens, they can be used as an argument of another function, can be returned by another function, and can be used as a property of an object.
+
+Functions that are used as an argument to another function are called callback functions.
+##### Example:
+```JavaScript
+function divideByHalf(sum){
+  console.log(Math.floor(sum / 2));
+}
+
+function multiplyBy2(sum){
+  console.log(sum * 2);
+}
+
+function operationOnSum(num1,num2,operation){
+  var sum = num1 + num2;
+  operation(sum);
+}
+
+operationOnSum(3, 3, divideByHalf); // Outputs 3
+
+operationOnSum(5, 5, multiplyBy2); // Outputs 20
+```
+* In the code above, we are performing mathematical operations on the sum of two numbers. The operationOnSum function takes 3 arguments, the first number, the second number, and the operation that is to be performed on their sum (callback).
+* Both divideByHalf and multiplyBy2 functions are used as callback functions in the code above.
+* These callback functions will be executed only after the function operationOnSum is executed.
+* Therefore, a callback is a function that will be executed after another function gets executed.
+
+### ```24. What are the types of errors in javascript?```
+#### There are two types of errors in javascript.
+
+#### 1. Syntax error: Syntax errors are mistakes or spelling problems in the code that cause the program to not execute at all or to stop running halfway through. Error messages are usually supplied as well.
+#### 2. Logical error: Reasoning mistakes occur when the syntax is proper but the logic or program is incorrect. The application executes without problems in this case. However, the output findings are inaccurate. These are sometimes more difficult to correct than syntax issues since these applications do not display error signals for logic faults.
+
+### ```25. What is memoization?```
+#### Memoization is a form of caching where the return value of a function is cached based on its parameters. If the parameter of that function is not changed, the cached version of the function is returned.
+Let’s understand memoization, by converting a simple function to a memoized function:
+
+``` Note- Memoization is used for expensive function calls but in the following example, we are considering a simple function for understanding the concept of memoization better.```
+
+Consider the following function:
+```JavaScript
+function addTo256(num){
+  return num + 256;
+}
+addTo256(20); // Returns 276
+addTo256(40); // Returns 296
+addTo256(20); // Returns 276
+```
+
+In the code above, we have written a function that adds the parameter to 256 and returns it.
+
+When we are calling the function addTo256 again with the same parameter (“20” in the case above), we are computing the result again for the same parameter.
+
+Computing the result with the same parameter, again and again, is not a big deal in the above case, but imagine if the function does some heavy-duty work, then, computing the result again and again with the same parameter will lead to wastage of time.
+
+This is where memoization comes in, by using memoization we can store(cache) the computed results based on the parameters. If the same parameter is used again while invoking the function, instead of computing the result, we directly return the stored (cached) value.
+
+Let’s convert the above function addTo256, to a memoized function:
+```JavaScript
+function memoizedAddTo256(){
+  var cache = {};
+
+  return function(num){
+    if(num in cache){
+      console.log("cached value");
+      return cache[num]
+    }
+    else{
+      cache[num] = num + 256;
+      return cache[num];
+    }
+  }
+}
+var memoizedFunc = memoizedAddTo256();
+
+memoizedFunc(20); // Normal return
+memoizedFunc(20); // Cached return
+```
+
+In the code above, if we run the memoizedFunc function with the same parameter, instead of computing the result again, it returns the cached result.
+
+```Note- Although using memoization saves time, it results in larger consumption of memory since we are storing all the computed results.```
+
+### ```26. What is recursion in a programming language?```
+#### Recursion is a technique to iterate over an operation by having a function call itself repeatedly until it arrives at a result.
+
+```JavaScript
+function add(number) {
+  if (number <= 0) {
+    return 0;
+  } else {
+    return number + add(number - 1);
+  }
+}
+add(3) => 3 + add(2)
+          3 + 2 + add(1)
+          3 + 2 + 1 + add(0)
+          3 + 2 + 1 + 0 = 6
+```
+
+Example of a recursive function:
+
+The following function calculates the sum of all the elements in an array by using recursion:
+
+```JavaScript
+function computeSum(arr){
+  if(arr.length === 1){
+    return arr[0];
+  }
+  else{
+    return arr.pop() + computeSum(arr);
+  }
+}
+computeSum([7, 8, 9, 99]); // Returns 123
+```
+
+### ```27. What is the use of a constructor function in javascript?```
+#### Constructor functions are used to create objects in javascript.
+
+When do we use constructor functions?
+
+If we want to create multiple objects having similar properties and methods, constructor functions are used.
+
+```Note- The name of a constructor function should always be written in Pascal Notation: every word should start with a capital letter.```
+
+##### Example:
+
+function Person(name,age,gender){
+  this.name = name;
+  this.age = age;
+  this.gender = gender;
+}
+
+
+var person1 = new Person("Vivek", 76, "male");
+console.log(person1);
+
+var person2 = new Person("Courtney", 34, "female");
+console.log(person2);
+```
+
+In the code above, we have created a constructor function named Person. Whenever we want to create a new object of the type Person, We need to create it using the new keyword:
+
+```JavaScript
+var person3 = new Person("Lilly", 17, "female");
+```
+
+The above line of code will create a new object of the type Person. Constructor functions allow us to group similar objects.
+
+### ```28. What is DOM?```
+
+* DOM stands for Document Object Model.  DOM is a programming interface for HTML and XML documents.
+* When the browser tries to render an HTML document, it creates an object based on the HTML document called DOM. Using this DOM, we can manipulate or change various elements inside the HTML document.
+* Example of how HTML code gets converted to DOM:
+
+<div>
+<img src="images/DOM1.png"/>
+<img src="images/DOM2.png"/>
+</div>
+
+### ```29. Which method is used to retrieve a character from a certain index?```
+
+#### The charAt() function of the JavaScript string finds a char element at the supplied index. The index number begins at 0 and continues up to n-1, Here n is the string length. The index value must be positive, higher than, or the same as the string length.
+
+### ```30. What do you mean by BOM?```
+
+#### Browser Object Model is known as BOM. It allows users to interact with the browser. A browser's initial object is a window. As a result, you may call all of the window's functions directly or by referencing the window. The document, history, screen, navigator, location, and other attributes are available in the window object.

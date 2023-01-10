@@ -122,7 +122,7 @@ var hoistedVariable;
 ##### Example 2:
 
 ```JavaScript
-hoistedFunction();  // Outputs " Hello world! " even when the function is declared after calling
+hoistedFunction();  // Outputs "Hello world!" even when the function is declared after calling
 
 function hoistedFunction(){ 
   console.log(" Hello world! ");
@@ -138,7 +138,7 @@ function doSomething(){
   console.log(x);
   var x;
 } 
-// doSomething(); Outputs 33 since the local variable “x” is hoisted inside the local scope
+doSomething(); // Outputs 33 since the local variable "x" is hoisted inside the local scope
 ```
 
 ``` Note - Variable initializations are not hoisted, only variable declarations are hoisted:```
@@ -158,17 +158,17 @@ var x;
 
 #### The debugger for the browser must be activated in order to debug the code. Built-in debuggers may be switched on and off, requiring the user to report faults. The remaining section of the code should stop execution before moving on to the next line while debugging.
 
-### ```4. Difference between “ == “ and “ === “ operators.```
+### ```4. Difference between " == " and " === " operators.```
 
-#### Both are comparison operators. The difference between both the operators is that “==” is used to compare values whereas, “ === “ is used to compare both values and types.
+#### Both are comparison operators. The difference between both the operators is that " == " is used to compare values whereas, " === " is used to compare both values and types.
 
 ##### Example:
 
 ```JavaScript
 var x = 2;
 var y = "2";
-(x == y)  // Returns true since the value of both x and y is the same
-(x === y) // Returns false since the typeof x is "number" and typeof y is "string"
+console.log(x == y);  // Returns true since the value of both x and y is the same
+console.log(x === y); // Returns false since the typeof x is "number" and typeof y is "string"
 ```
 
 ### ```5. Difference between var and let keyword in javascript.```
@@ -182,14 +182,14 @@ var y = "2";
 
 #### Implicit type coercion in javascript is the automatic conversion of value from one data type to another. It takes place when the operands of an expression are of different data types.
 
-* String coercion - String coercion takes place while using the ‘ + ‘ operator. When a number is added to a string, the number type is always converted to the string type.
+* String coercion - String coercion takes place while using the ' + ' operator. When a number is added to a string, the number type is always converted to the string type.
 
 ##### Example 1:
 
 ```JavaScript
 var x = 3;
 var y = "3";
-x + y // Returns "33" 
+console.log(x + y); // Returns "33" 
 ```
 
 ##### Example 2:
@@ -197,31 +197,31 @@ x + y // Returns "33"
 ```JavaScript
 var x = 24;
 var y = "Hello";
-x + y   // Returns "24Hello"; 
+console.log(x + y); // Returns "24Hello"; 
 ```
-```Note - ‘ + ‘ operator when used to add two numbers, outputs a number. The same ‘ + ‘ operator when used to add two strings, outputs the concatenated string:```
+```Note - ‘ + ‘ operator when used to add two numbers, outputs a number. The same ' + ' operator when used to add two strings, outputs the concatenated string:```
 ```JavaScript
 var name = "Abhinav";
 var surname = " Anand";
-name + surname //Returns "Abhinav Anand"
+console.log(name + surname); // Returns "Abhinav Anand"
 ```
 
 Let’s understand both the examples where we have added a number to a string,
 
-When JavaScript sees that the operands of the expression x + y are of different types ( one being a number type and the other being a string type ), it converts the number type to the string type and then performs the operation. Since after conversion, both the variables are of string type, the ‘ + ‘ operator outputs the concatenated string “33” in the first example and “24Hello” in the second example.
+When JavaScript sees that the operands of the expression x + y are of different types ( one being a number type and the other being a string type ), it converts the number type to the string type and then performs the operation. Since after conversion, both the variables are of string type, the " + " operator outputs the concatenated string "33" in the first example and "24Hello" in the second example.
 
-```Note - Type coercion also takes place when using the ‘ - ‘ operator, but the difference while using ‘ - ‘ operator is that, a string is converted to a number and then subtraction takes place.```
+```Note - Type coercion also takes place when using the ' - ' operator, but the difference while using ' - ' operator is that, a string is converted to a number and then subtraction takes place.```
 ```JavaScript
 var x = 3;
 var y = "3";
-console.log(x - y);    //Returns 0 since the variable y (string type) is converted to a number type
+console.log(x - y); // Returns 0 since the variable y (string type) is converted to a number type
 ```
 
 * Boolean Coercion - Boolean coercion takes place when using logical operators, ternary operators, if statements, and loop checks. To understand boolean coercion in if statements and operators, we need to understand truthy and falsy values.
 
 Truthy values are those which will be converted (coerced) to true. Falsy values are those which will be converted to false.
 
-All values except false, 0, 0n, -0, “”, null, undefined, and NaN are truthy values.
+All values except false, 0, 0n, -0, " ", null, undefined, and NaN are truthy values.
 
 #### If statements:
 
@@ -248,47 +248,47 @@ var x = 220;
 var y = "Hello";
 var z = undefined;
         
-x | | y    // Returns 220 since the first value is truthy
+console.log(x || y);    // Returns 220 since the first value is truthy
         
-x | | z e  // Returns 220 since the first value is truthy
+console.log(x || z);  // Returns 220 since the first value is truthy
         
-x && y    // Returns "Hello" since both the values are truthy
+console.log(x && y);    // Returns "Hello" since both the values are truthy
         
-y && z   // Returns undefined since the second value is falsy
+console.log(y && z);   // Returns undefined since the second value is falsy
         
 if( x && y ){ 
-  console.log("Code runs" ); // This block runs because x && y returns "Hello" (Truthy)
+  console.log("Code Runs" ); // This block runs because x && y returns "Hello" (Truthy)
 }   
         
 if( x || z ){
-  console.log("Code runs");  // This block runs because x || y returns 220 (Truthy)
+  console.log("Code Runs");  // This block runs because x || y returns 220 (Truthy)
 }
 ```
 
-* Equality Coercion - Equality coercion takes place when using ‘ == ‘ operator. As we have stated before
+* Equality Coercion - Equality coercion takes place when using ' == ' operator. As we have stated before
 
-``` The ‘ == ‘ operator compares values and not types. ```
+``` The ' == ' operator compares values and not types. ```
 
-While the above statement is a simple way to explain == operator, it’s not completely true
+While the above statement is a simple way to explain == operator, it's not completely true
 
-The reality is that while using the ‘==’ operator, coercion takes place.
+The reality is that while using the ' == ' operator, coercion takes place.
 
-The ‘==’ operator, converts both the operands to the same type and then compares them.
+The ' == ' operator, converts both the operands to the same type and then compares them.
 
 ##### Example 1:
 ```JavaScript
 var a = 12;
 var b = "12";
-a == b // Returns true because both 'a' and 'b' are converted to the same type and then compared. Hence the operands are equal.
+console.log(a == b); // Returns true because both 'a' and 'b' are converted to the same type and then compared. Hence the operands are equal.
 ```
-Coercion does not take place when using the ‘===’ operator. Both operands are not converted to the same type in the case of ‘===’ operator.
+Coercion does not take place when using the ' === ' operator. Both operands are not converted to the same type in the case of ' === ' operator.
 
 ##### Example 2:
 ```JavaScript
 var a = 226;
 var b = "226";
 
-a === b // Returns false because coercion does not take place and the  operands are of different types. Hence they are not equal. 
+console.log(a === b); // Returns false because coercion does not take place and the operands are of different types. Hence they are not equal. 
 ```
 
 ### ```7. Is javascript a statically typed or a dynamically typed language?```
@@ -300,6 +300,7 @@ For example, a variable that is assigned a number type can be converted to a str
 ```JavaScript
 var a = 23;
 var a = "Hello World!";
+console.log(a);
 ```
 
 ### ```8. What is NaN property in JavaScript?```

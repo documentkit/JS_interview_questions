@@ -988,9 +988,9 @@ The above line of code will create a new object of the type Person. Constructor 
 * When the browser tries to render an HTML document, it creates an object based on the HTML document called DOM. Using this DOM, we can manipulate or change various elements inside the HTML document.
 * Example of how HTML code gets converted to DOM:
 
-<div>
-<img src="images/DOM1.png"/>
-<img src="images/DOM2.png"/>
+<div align="center">
+<img src="images/DOM1.png" width="150" height="200"/>
+<img src="images/DOM2.png" width="250" height="200"/>
 </div>
 
 ### ```29. Which method is used to retrieve a character from a certain index?```

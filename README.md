@@ -371,7 +371,7 @@ From the above example, we can see that primitive data types when passed to anot
 Assign operator dealing with non-primitive types:
 
 <div align="center">
-<img src="images/passed_by_reference.png" width="400" height="200" />
+<img src="images/passed_by_reference.png" width="400" height="250" />
 </div>
 
 ```JavaScript

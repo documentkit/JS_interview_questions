@@ -1288,6 +1288,9 @@ Before promises, callbacks were used to handle asynchronous operations. But due 
 
 A promise is created using the ```Promise``` constructor which takes in a callback function with two parameters, ```resolve``` and ```reject``` respectively.
 
+<div align="center">
+<img src="images/promise.png" width="300" height="150" />
+</div>
 
 ```resolve``` is a function that will be called when the async operation has been successfully completed.
 
@@ -1295,7 +1298,7 @@ A promise is created using the ```Promise``` constructor which takes in a callba
 
 ##### Example:
 
-Promises are used to handle asynchronous operations like server requests, for ease of understanding, we are using an operation to calculate the sum of three elements.
+```Promises are used to handle asynchronous operations like server requests, for ease of understanding, we are using an operation to calculate the sum of three elements.```
 
 In the function below, we are returning a promise inside a function:
 
@@ -1322,6 +1325,9 @@ In the code above, we are calculating the sum of three elements, if the length o
 
 We can consume any promise by attaching ```then()``` and ```catch()``` methods to the consumer.
 
+<div align="center">
+<img src="images/then catch.png" width="400" height="200"/>
+</div>
 
 ```then()``` method is used to access the result when the promise is fulfilled.
 

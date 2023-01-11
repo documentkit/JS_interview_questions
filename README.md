@@ -1530,7 +1530,7 @@ const {strength:strength} = classDetails;
 const {strength} = classDetails;
 ```
 
-Array destructuring: Before ES6 version:
+* ```Array destructuring```: Before ES6 version:
 
 ```JavaScript
 const arr = [1, 2, 3, 4];

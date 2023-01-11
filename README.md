@@ -109,7 +109,13 @@ console.log(array1);
 
 ### ```2. Explain Hoisting in javascript.```
 
-#### Hoisting is the default behaviour of javascript where all the variable and function declarations are moved on top. This means that irrespective of where the variables and functions are declared, they are moved on top of the scope. The scope can be both local and global.
+#### Hoisting is the default behaviour of javascript where all the variable and function declarations are moved on top.
+
+<div align="center">
+<img src="images/hoisting.png" width="400" height="150" />
+</div>
+
+This means that irrespective of where the variables and functions are declared, they are moved on top of the scope. The scope can be both local and global.
 
 ##### Example 1:
 
@@ -293,7 +299,12 @@ console.log(a === b); // Returns false because coercion does not take place and 
 
 ### ```7. Is javascript a statically typed or a dynamically typed language?```
 
-#### JavaScript is a dynamically typed language. In a dynamically typed language, the type of a variable is checked during run-time in contrast to a statically typed language, where the type of a variable is checked during compile-time.
+#### JavaScript is a dynamically typed language. In a dynamically typed language, the type of a variable is checked during run-time in contrast to a statically typed language, where the type of a variable is checked during ```compile-time```.
+
+<div align="center">
+<img src="images/dynamically.png" width="400" height="200" />
+</div>
+
 Since javascript is a loosely(dynamically) typed language, variables in JS are not associated with any type. A variable can hold the value of any data type.
 
 For example, a variable that is assigned a number type can be converted to a string type:
@@ -332,6 +343,11 @@ In the above example, we created a variable x and assigned it a value of "2". In
 Assign operator behaves differently when dealing with primitive and non-primitive data types,
 
 Assign operator dealing with primitive types:
+
+<div align="center">
+<img src="passed_by_value.png" width="400" height="200" />
+</div>
+
 ```JavaScript
 var y = 234;
 var z = y;
@@ -353,6 +369,11 @@ console.log(z);  // Returns 234, since z points to a new address in the memory s
 From the above example, we can see that primitive data types when passed to another variable, are passed by value. Instead of just assigning the same address to another variable, the value is passed and new space of memory is created.
 
 Assign operator dealing with non-primitive types:
+
+<div align="center">
+<img src="passed_by_reference.png" width="400" height="200" />
+</div>
+
 ```JavaScript
 var obj = { name: "Henry", surname: "Cavill" };
 var obj2 = obj;
@@ -816,6 +837,11 @@ Therefore randomFunc(), instead of destroying the value of obj1 after execution,
 * A prototype is a blueprint of an object. The prototype allows us to use properties and methods on an object even if the properties and methods do not exist on the current object.
 
 Let’s see prototypes help us use methods and properties:
+
+<div align="center">
+<img src="object_prototype.png" width="400" height="200" />
+</div>
+
 ```JavaScript
 var arr = [];
 arr.push(2);
@@ -1000,3 +1026,12 @@ The above line of code will create a new object of the type Person. Constructor 
 ### ```30. What do you mean by BOM?```
 
 #### Browser Object Model is known as BOM. It allows users to interact with the browser. A browser's initial object is a window. As a result, you may call all of the window's functions directly or by referencing the window. The document, history, screen, navigator, location, and other attributes are available in the window object.
+
+### ```31. What is the distinction between client-side and server-side JavaScript?```
+#### Client-side JavaScript is made up of two parts, a fundamental language and predefined objects for performing JavaScript in a browser. JavaScript for the client is automatically included in the HTML pages. At runtime, the browser understands this script.
+
+<div>
+<img src="client_&_server.png" />
+</div>
+
+Client-side JavaScript is similar to server-side JavaScript. It includes JavaScript that will execute on a server. Only after processing is the server-side JavaScript deployed.

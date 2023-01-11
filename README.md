@@ -1,5 +1,7 @@
 # JavaScript BASICS...
 
+## BEGINNER
+
 ### ```1. What are the different data types present in javascript?```
 To know the type of a JavaScript variable, we can use the typeof operator.
 
@@ -1035,3 +1037,151 @@ The above line of code will create a new object of the type Person. Constructor 
 </div>
 
 Client-side JavaScript is similar to server-side JavaScript. It includes JavaScript that will execute on a server. Only after processing is the server-side JavaScript deployed.
+
+## ADVANCE
+
+### ```32. What are arrow functions?```
+#### Arrow functions were introduced in the ES6 version of javascript. They provide us with a new and shorter syntax for declaring functions. Arrow functions can only be used as a function expression.
+
+Let’s compare the normal function declaration and the arrow function declaration in detail:
+
+```JavaScript
+// Traditional Function Expression
+var add = function(a,b){
+  return a + b;
+}
+console.log(add(2,4));
+
+// Arrow Function Expression
+var arrowAdd = (a,b) => a + b;
+console.log(arrowAdd(4,7));
+```
+
+Arrow functions are declared without the function keyword. If there is only one returning expression then we don’t need to use the return keyword as well in an arrow function as shown in the example above. Also, for functions having just one line of code, curly braces { } can be omitted.
+
+```JavaScript
+// Traditional function expression
+var multiplyBy2 = function(num){
+  return num * 2;
+}
+console.log(multiplyBy2(4));
+
+// Arrow function expression
+var arrowMultiplyBy2 = num => num * 2;
+console.log(arrowMultiplyBy2(5));
+```
+
+If the function takes in only one argument, then the parenthesis () around the parameter can be omitted as shown in the code above. 
+
+```JavaScript
+var obj1 = {
+  valueOfThis: function(){
+    return this;
+  }
+}
+var obj2 = {
+  valueOfThis: ()=>{
+    return this;
+  }
+}
+
+console.log(obj1.valueOfThis()); // Will return the object obj1
+console.log(obj2.valueOfThis()); // Will return window/global object
+```
+
+The biggest difference between the traditional function expression and the arrow function is the handling of ```this``` keyword. By general definition, ```this``` keyword always refers to the object that is calling the function. As you can see in the code above, ```obj1.valueOfThis()``` returns obj1 since ```this``` keyword refers to the object calling the function.
+
+In the arrow functions, there is no binding of this keyword. This keyword inside an arrow function does not refer to the object calling it. It rather inherits its value from the parent scope which is the window object in this case. Therefore, in the code above, ```obj2.valueOfThis()``` returns the window object.
+
+### ```33. What do mean by prototype design pattern?```
+#### The Prototype Pattern produces different objects, but instead of returning uninitialized objects, it produces objects that have values replicated from a template – or sample – object. Also known as the Properties pattern, the Prototype pattern is used to create prototypes.
+
+The introduction of business objects with parameters that match the database's default settings is a good example of where the Prototype pattern comes in handy. The default settings for a newly generated business object are stored in the prototype object.
+
+The Prototype pattern is hardly used in traditional languages, however, it is used in the development of new objects and templates in JavaScript, which is a prototypal language.
+
+### ```34. Differences between declaring variables using var, let and const.```
+#### Before the ES6 version of javascript, only the keyword var was used to declare variables. With the ES6 Version, keywords let and const were introduced to declare variables.
+
+<div align="center">
+<img src="images/var let const.png"/>
+</div>
+
+Let’s understand the differences with examples:
+```JavaScript
+var variable1 = 23;
+
+let variable2 = 89;
+
+function catchValues(){
+  console.log(variable1);
+  console.log(variable2);
+
+// Both the variables can be accessed anywhere since they are declared in the global scope
+}
+
+window.variable1; // Returns the value 23
+window.variable2; // Returns undefined
+```
+
+* The variables declared with the let keyword in the global scope behave just like the variable declared with the var keyword in the global scope.
+* Variables declared in the global scope with var and let keywords can be accessed from anywhere in the code.
+* But, there is one difference! Variables that are declared with the var keyword in the global scope are added to the window/global object. Therefore, they can be accessed using window.variableName.
+Whereas, the variables declared with the let keyword are not added to the global object, therefore, trying to access such variables using window.variableName results in an error.
+
+var vs let in functional scope
+```JavaScript
+function varVsLetFunction(){
+  let awesomeCar1 = "Audi";
+  var awesomeCar2 = "Mercedes";
+}
+
+console.log(awesomeCar1); // Throws an error
+console.log(awesomeCar2); // Throws an error
+```
+
+Variables are declared in a functional/local scope using var and let keywords behave exactly the same, meaning, they cannot be accessed from outside of the scope.
+
+```JavaScript
+{
+  var variable3 = [1, 2, 3, 4];
+}
+console.log(variable3); // Outputs [1,2,3,4]
+
+{
+  let variable4 = [6, 55, -1, 2];
+}
+// console.log(variable4); // Throws error
+
+for(let i = 0; i < 2; i++){
+  // Do something
+}
+// console.log(i); // Throws error
+
+for(var j = 0; j < 2; j++){
+  // Do something
+}
+console.log(j); // Outputs 2 
+```
+
+* In javascript, a block means the code written inside the curly braces {}.
+* Variables declared with var keyword do not have block scope. It means a variable declared in block scope {} with the var keyword is the same as declaring the variable in the global scope.
+* Variables declared with let keyword inside the block scope cannot be accessed from outside of the block.
+
+```const``` keyword
+
+Variables with the const keyword behave exactly like a variable declared with the let keyword with only one difference, any variable declared with the const keyword cannot be reassigned.
+##### Example:
+
+```JavaScript
+const x = {name:"Vivek"};
+
+// x = {address: "India"}; // Throws an error
+
+console.log(x.name = "Nikhil"); // No error is thrown
+
+const y = 23;
+
+// y = 44; // Throws an error
+```
+In the code above, although we can change the value of a property inside the variable declared with const keyword, we cannot completely reassign the variable itself.

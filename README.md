@@ -345,7 +345,7 @@ Assign operator behaves differently when dealing with primitive and non-primitiv
 Assign operator dealing with primitive types:
 
 <div align="center">
-<img src="passed_by_value.png" width="400" height="200" />
+<img src="images/passed_by_value.png" width="400" height="200" />
 </div>
 
 ```JavaScript
@@ -371,7 +371,7 @@ From the above example, we can see that primitive data types when passed to anot
 Assign operator dealing with non-primitive types:
 
 <div align="center">
-<img src="passed_by_reference.png" width="400" height="200" />
+<img src="images/passed_by_reference.png" width="400" height="200" />
 </div>
 
 ```JavaScript
@@ -839,7 +839,7 @@ Therefore randomFunc(), instead of destroying the value of obj1 after execution,
 Let’s see prototypes help us use methods and properties:
 
 <div align="center">
-<img src="object_prototype.png" width="400" height="200" />
+<img src="images/object_prototype.png" width="400" height="200" />
 </div>
 
 ```JavaScript
@@ -1030,8 +1030,8 @@ The above line of code will create a new object of the type Person. Constructor 
 ### ```31. What is the distinction between client-side and server-side JavaScript?```
 #### Client-side JavaScript is made up of two parts, a fundamental language and predefined objects for performing JavaScript in a browser. JavaScript for the client is automatically included in the HTML pages. At runtime, the browser understands this script.
 
-<div>
-<img src="client_&_server.png" />
+<div align="center">
+<img src="images/client_&_server.png" width="500" height="250" />
 </div>
 
 Client-side JavaScript is similar to server-side JavaScript. It includes JavaScript that will execute on a server. Only after processing is the server-side JavaScript deployed.

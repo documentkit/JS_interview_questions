@@ -1260,11 +1260,9 @@ console.log(mergedObj);
 // Outputs {x:'Hello', y:'Bye',z:'Yes',a:'No'};
 ```         
 
-```Note - Key differences between rest parameter and spread operator:
-
-* Rest parameter is used to take a variable number of arguments and turns them into an array while the spread operator takes an array or an object and spreads it
+```Note - Key differences between rest parameter and spread operator:```
+* Rest parameter is used to take a variable number of arguments and turns them into an array while the spread operator takes an array or an object and spreads it.
 * Rest parameter is used in function declaration whereas the spread operator is used in function calls.
-```
                          
 ### ```36. In JavaScript, how many different methods can you make an object?```
 #### In JavaScript, there are several ways to declare or construct an object.

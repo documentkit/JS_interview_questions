@@ -1104,7 +1104,7 @@ The Prototype pattern is hardly used in traditional languages, however, it is us
 #### Before the ES6 version of javascript, only the keyword var was used to declare variables. With the ES6 Version, keywords let and const were introduced to declare variables.
 
 <div align="center">
-<img src="images/var let const.png"/>
+<img src="images/var let const.png" width="350" height="200"/>
 </div>
 
 Let’s understand the differences with examples:
@@ -1129,7 +1129,7 @@ window.variable2; // Returns undefined
 * But, there is one difference! Variables that are declared with the var keyword in the global scope are added to the window/global object. Therefore, they can be accessed using window.variableName.
 Whereas, the variables declared with the let keyword are not added to the global object, therefore, trying to access such variables using window.variableName results in an error.
 
-var vs let in functional scope
+```var``` vs ```let``` in functional scope
 ```JavaScript
 function varVsLetFunction(){
   let awesomeCar1 = "Audi";

@@ -1214,8 +1214,8 @@ function addAllArgs(...args){
   return sumOfArgs;
 }
 
-addAllArgs(6, 5, 7, 99); // Returns 117
-addAllArgs(1, 3, 4); // Returns 8
+console.log(addAllArgs(6, 5, 7, 99)); // Returns 117
+console.log(addAllArgs(1, 3, 4)); // Returns 8
 ```
                          
 ```Note - Rest parameter should always be used at the last parameter of a function```:
@@ -1319,6 +1319,8 @@ function sumOfThreeElements(...elements){
     }
   })
 }
+
+console.log(sumOfThreeElements());
 ```   
 
 In the code above, we are calculating the sum of three elements, if the length of the elements array is more than 3, a promise is rejected, or else the promise is resolved and the sum is returned.
@@ -1363,9 +1365,10 @@ Student.prototype.getDetails = function(){
 
 
 let student1 = new Student("Vivek", 354, "6th", "A");
-student1.getDetails();
+console.log(student1.getDetails());
 // Returns Name: Vivek, Roll no:354, Grade: 6th, Section:A
-
+```
+```JavaScript
 // ES6 version classes
 class Student{
   constructor(name,rollNumber,grade,section){
@@ -1382,8 +1385,8 @@ class Student{
 }
 
 let student2 = new Student("Garry", 673, "7th", "C");
-student2.getDetails();
-// Returns Name: Garry, Roll no:673, Grade: 7th, Section:C
+
+console.log(student2.getDetails()); // Returns Name: Garry, Roll no:673, Grade: 7th, Section:C
 ```
 
 Key points to remember about classes:
@@ -1420,7 +1423,7 @@ function* genFunc(){
   yield 3;
   yield 4;
 }
-genFunc(); // Returns Object [Generator] {}
+console.log(genFunc()); // Returns Object [Generator] {}
 ```
 The generator object consists of a method called next(), this method when called, executes the code until the nearest yield statement, and returns the yield value.
 
@@ -1462,7 +1465,6 @@ const newSet = new Set([4, 5, 6, 7]);
 console.log(newSet);// Outputs Set {4,5,6,7}
 
 const newSet2 = new WeakSet([3, 4, 5]); //Throws an error
-
 
 let obj1 = {message:"Hello world"};
 const newSet3 = new WeakSet([obj1]);
@@ -1509,6 +1511,8 @@ const classDetails = {
 const classStrength = classDetails.strength;
 const classBenches = classDetails.benches;
 const classBlackBoard = classDetails.blackBoard;
+
+console.log(classStrength, classBenches, classBlackBoard);
 ```
 The same example using object destructuring:
 
@@ -1542,6 +1546,8 @@ const first = arr[0];
 const second = arr[1];
 const third = arr[2];
 const fourth = arr[3];
+
+console.log(first, second, third, fourth);
 ```
 
 The same example using object destructuring:
